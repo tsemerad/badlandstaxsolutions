@@ -57,13 +57,13 @@
 
 		// Off-Canvas Navigation.
 
-			// Title Bar.
-				$(
-					'<div id="titleBar">' +
-						'<a href="#navPanel" class="toggle"></a>' +
-					'</div>'
-				)
-					.appendTo($body);
+			// // Title Bar.
+			// 	$(
+			// 		'<div id="titleBar">' +
+			// 			'<a href="#navPanel" class="toggle"></a>' +
+			// 		'</div>'
+			// 	)
+			// 		.appendTo($body);
 
 			// Navigation Panel.
 				$(
