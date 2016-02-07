@@ -1274,7 +1274,7 @@
 		clear: both;
 	}
 
-	ul.divided li {
+	ul.divided > li {
 		border-top: solid 2px #e5e5e5;
 	}
 
@@ -1806,7 +1806,7 @@
 					margin-left: 0;
 				}
 
-			ul.divided li {
+			ul.divided > li {
 				margin: 2.5em 0 0 0;
 				padding: 2.5em 0 0 0;
 			}
@@ -2187,7 +2187,7 @@
 				margin: 0;
 			}
 
-			ul.divided li {
+			ul.divided > li {
 				margin: 2.75em 0 0 0;
 				padding: 2.75em 0 0 0;
 			}
