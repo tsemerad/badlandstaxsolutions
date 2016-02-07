@@ -1199,9 +1199,9 @@
 		border: solid 6px #ebebeb !important;
 	}
 
-		.image:hover {
+		/*.image:hover {
 			opacity: 0.9;
-		}
+		}*/
 
 		.image img {
 			display: block;
