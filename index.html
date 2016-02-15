@@ -176,24 +176,29 @@
 						<div class="row">
 							<div class="6u 12u(mobile)">
 								<section>
-									<form method="post" action="#">
+									<form method="post" action="http://contact-tsemerad.rhcloud.com/contact">
 										<div class="row 50%">
 											<div class="6u 12u(mobile)">
-												<input name="name" placeholder="Name" type="text" />
+												<input name="name" placeholder="Name" name="name" type="text" />
 											</div>
 											<div class="6u 12u(mobile)">
-												<input name="email" placeholder="Email" type="text" />
+												<input name="email" placeholder="Email" name="email" type="text" />
 											</div>
 										</div>
 										<div class="row 50%">
 											<div class="12u">
-												<textarea name="message" placeholder="Message"></textarea>
+												<textarea name="message" placeholder="Message" name="message"></textarea>
 											</div>
 										</div>
 										<div class="row 50%">
 											<div class="12u">
-												<a href="#" style="background-color: #108078" class="form-button-submit button icon fa-envelope">Send Message</a>
+												<button type="submit" style="background-color: #108078" class="form-button-submit button icon fa-envelope">Send Message</button>
 											</div>
+										</div>
+										<input type="hidden" name="contactsource" value="badlandstaxsolutions.com">
+										<div style="visibility: hidden; height: 0;" class="form-group" id="content2">
+											<label for="inputContent">If you see this message, leave this form field blank</label>
+											<textarea type="text" class="form-control" name="content" id="inputContent" placeholder="Place Content here"></textarea>
 										</div>
 									</form>
 								</section>
@@ -256,6 +261,28 @@
 			<script src="assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
+
+      <script type="text/javascript">
+			$(document).ready(function(){
+			  var $form = $('form');
+				$form.submit(function() {
+	        var self = this;
+	        $.ajax({
+	          type: "POST",
+	          // dataType: 'jsonp',
+	          url: $(self).attr('action'),
+	          data: $(self).serialize(), // serializes the form's elements.
+	          success: function(data)
+	          {
+	            $form.prepend('<div style="background-color: lightblue; padding: 0.4em; border-radius: 6px; margin-bottom: 1em; color: black">Form submitted successfully! We\'ll contact you soon.</div>');
+	 						$form.trigger('reset');
+	          }
+	        });
+	        return false; // avoid to execute the actual submit of the form.
+		    });
+
+			});
+			</script>
 
 	</body>
 </html>
